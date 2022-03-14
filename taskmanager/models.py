@@ -4,7 +4,7 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category_name = db.Column(db.String(25), unique=True, nullable=False)
     tasks = db.relationship("Task", backref="category", cascade="all, delete", lazy=True)
-    #Note how the tasks was connected to the FK in the Task class
+    # Note how the tasks was connected to the FK in the Task class
     # Lazy=True finds any tasks linked to a category
 
     def __repr__(self):
